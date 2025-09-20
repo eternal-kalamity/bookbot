@@ -7,6 +7,8 @@ def main():
 
     booktext = get_book_text(bookpath)
 
-    print(booktext)
+    num_words = len(booktext.split())
+
+    print(f"{num_words} words found in the document")
 
 main()
