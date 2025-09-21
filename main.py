@@ -1,4 +1,5 @@
 #import os
+import sys
 from stats import word_count, char_counter, sort_on
 
 def get_book_text(bookpath):
@@ -6,7 +7,14 @@ def get_book_text(bookpath):
         return f.read()
 
 def main():
-    bookpath = "books/frankenstein.txt"
+#    bookpath = "books/frankenstein.txt"
+#   this is where user would input the command to start the file
+#   checking if the command is correct
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else:
+        bookpath = sys.argv[1]
 
     booktext = get_book_text(bookpath)
 
